@@ -11,6 +11,6 @@ This app is to help the user by telling how can he/she return the change to the 
 | Denomination: | 2000 | 500 | 100 | 20 | 10 | 5 | 1 |
 
 
-### Cash Register App is made using Vanilla JS, HTML & CSS.
+### Cash Register App is made using React JS, HTML & CSS.
 ---
 Deployed Link: [Cash Register - Home](https://cashregister-ankit1595.netlify.app)
