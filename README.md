@@ -13,4 +13,4 @@ This app is to help the user by telling how can he/she return the change to the 
 
 ### Cash Register App is made using Vanilla JS, HTML & CSS.
 ---
-Live Project: [Cash Register - Home](https://cashifyy.netlify.app/)
+Deployed Link: [Cash Register - Home](https://cashregister-ankit1595.netlify.app)
