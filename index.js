@@ -4,10 +4,8 @@ const checkButton = document.querySelector("#check-button");
 const nextButton = document.querySelector("#next-button");
 const cashGivenField = document.querySelector(".cash-given-field");
 const message = document.querySelector(".errorMsg");
-const outputContainer = document.querySelector(".output");
-const numChange = document.querySelectorAll(".numChange");
-
-const denominations = [1, 5, 10, 20, 100, 500, 2000];
+const num_change = document.querySelectorAll(".numChange");
+const deno = [1, 5, 10, 20, 100, 500, 2000];
 
 function showMessage(msg) {
   message.style.display = "block";
@@ -19,20 +17,16 @@ function hideMessage() {
 }
 
 function validateInputs() {
-  let billValue = Number(billAmount.value);
-  let cashValue = Number(cashGivenInput.value);
   hideMessage();
-  if (billValue > 0 && cashValue > 0) {
-    console.log(typeof billValue, cashValue);
-    if (cashValue < billValue) {
-      showMessage(
-        "Cash amount is less than the Bill, Please enter correct value"
-      );
-    } else if (billValue === cashValue) {
+  if (billAmount.value > 0 && cashGivenInput.value > 0) {
+    if (cashGivenInput.value < billAmount.value) {
+      showMessage("Cash amount is less than the Bill, Please enter correct value");
+    }
+    else if (billAmount.value === cashGivenInput.value) {
       showMessage("No amount should be returned");
-    } else {
-      returnChange(cashValue - billValue);
-      outputContainer.style.display = "block";
+    }
+    else{
+      return_change(cashGivenInput.value - billAmount.value);
     }
   } else {
     showMessage("Invalid Bill Amount or Cash Given value!");
@@ -40,9 +34,7 @@ function validateInputs() {
 }
 
 nextButton.addEventListener("click", () => {
-  let billValue = Number(billAmount.value);
-  hideMessage();
-  if (billValue > 0) {
+  if (billAmount.value > 0) {
     cashGivenField.style.display = "block";
     nextButton.style.display = "none";
   } else {
@@ -52,10 +44,12 @@ nextButton.addEventListener("click", () => {
 
 checkButton.addEventListener("click", validateInputs);
 
-function returnChange(balanceAmount) {
-  for (let i = denominations.length - 1; i > -1; i--) {
-    let numberOfDenominations = Math.trunc(balanceAmount / denominations[i]);
-    balanceAmount %= denominations[i];
-    numChange[i].innerText = numberOfDenominations;
+
+function return_change(balance_amount) {
+
+  for (let i = deno.length - 1; i > -1; i--) {
+    let num_deno = Math.trunc(balance_amount / deno[i]);
+    balance_amount %= deno[i];
+    num_change[i].innerText = num_deno;
   }
 }
