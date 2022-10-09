@@ -28,14 +28,17 @@ function validateInputs() {
       showMessage(
         "Cash amount is less than the Bill, Please enter correct value"
       );
+      outputContainer.style.display = "none";
     } else if (billValue === cashValue) {
       showMessage("No amount should be returned");
+      outputContainer.style.display = "none";
     } else {
       returnChange(cashValue - billValue);
       outputContainer.style.display = "block";
     }
   } else {
     showMessage("Invalid Bill Amount or Cash Given value!");
+    outputContainer.style.display = "none";
   }
 }
 
