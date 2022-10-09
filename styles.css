@@ -52,12 +52,12 @@ button {
 .cash-given-field {
   display: none;
 }
-.changeReturn {
-  /* display: none; */
+.output {
+  display: none;
 }
 .errorMsg {
-  padding-top: 1rem;
-  color: white;
+  margin-top: 1rem;
+  color: yellow;
 }
 #output {
   margin: 1rem 0;
